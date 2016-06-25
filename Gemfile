@@ -32,6 +32,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
   gem 'factory_girl_rails'
   gem 'rubocop'
   gem 'rspec'
+  gem 'devise'
+  gem 'ffaker'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
