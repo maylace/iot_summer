@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :house do
-    name "MyString"
+    name 'House1'
     user nil
   end
 end

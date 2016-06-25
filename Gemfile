@@ -34,6 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
   gem 'rspec-rails'
   gem 'devise'
   gem 'ffaker'
+  gem 'shoulda'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
