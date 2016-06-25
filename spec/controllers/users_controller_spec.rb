@@ -14,13 +14,13 @@ RSpec.describe UsersController, type: :controller do
         @user_attributes = FactoryGirl.attributes_for :user
         post :create, { user: @user_attributes }
       end
-      it { should respond_with 201 }
+      it { should respond_with 200 }
     end
 
     context 'when its not succesfull' do
       before(:each) do
-        @invalid_user_attributes ={ password: '12345678',
-                                    password_confirmation: '12345678'}
+        @invalid_user_attributes = { password: '1245678',
+                                    password_confirmation: '12378'}
         post :create, { user: @invalid_user_attributes }
       end
 
