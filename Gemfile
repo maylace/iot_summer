@@ -31,7 +31,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
   gem 'factory_girl_rails'
   gem 'rubocop'
-  gem 'rspec'
+  gem 'rspec-rails'
   gem 'devise'
   gem 'ffaker'
 
