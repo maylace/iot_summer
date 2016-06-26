@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :houses, :only => [:index, :create, :show]
+  resources :houses, :only => [:index, :create, :show, :update]
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

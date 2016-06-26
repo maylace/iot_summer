@@ -41,4 +41,22 @@ RSpec.describe HousesController, type: :controller do
       response.should render_template :show
     end
   end
+
+  describe 'PUT #update' do
+    before(:each) do
+      @house = FactoryGirl.create(:house, name: 'House1')
+    end
+
+    it 'assigns corect House' do
+      put :update, id: @house, house: FactoryGirl.attributes_for(:house)
+      assigns(:house).should eq(@house)
+    end
+
+    it 'changes @house attributes' do
+      put :update, id: @house,
+        house: FactoryGirl.attributes_for(:house, name: 'House_Mine')
+      @house.reload
+      @house.name.should eq('House_Mine')
+    end
+  end
 end
