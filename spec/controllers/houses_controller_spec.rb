@@ -44,7 +44,7 @@ RSpec.describe HousesController, type: :controller do
 
   describe 'PUT #update' do
     before(:each) do
-      @house = FactoryGirl.create(:house, name: 'House1')
+      @house = FactoryGirl.create(:house)
     end
 
     it 'assigns corect House' do
@@ -58,5 +58,23 @@ RSpec.describe HousesController, type: :controller do
       @house.reload
       @house.name.should eq('House_Mine')
     end
+  end
+
+  describe 'DELETE destroy' do
+    before(:each) do
+      @house = FactoryGirl.create(:house)
+    end
+
+    it 'deletes the house' do
+      expect{
+        delete :destroy, id: @house
+      }.to change(House, :count).by(-1)
+    end
+
+    it 'redirects to house#index' do
+      delete :destroy, id: @house
+      response.should redirect_to houses_path
+    end
+
   end
 end
