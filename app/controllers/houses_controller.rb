@@ -1,34 +1,43 @@
 class HousesController < ApplicationController
   def index
+    @houses = House.all
+  end
 
+   def new
+    @house = House.new
+
+  end
+
+  def edit
+    @house = House.find(params[:id])
   end
 
   def create
     @house = House.new(user_params)
     @house.save
-    redirect_to houses_url
+    redirect_to houses_path
   end
 
-  def show
+ def show
     @house = House.find(params[:id])
   end
 
-  def update
+def update
     @house = House.find(params[:id])
     if @house.update(user_params)
-      redirect_to @house
+      redirect_to houses_path
     end
   end
 
   def destroy
     @house = House.find(params[:id])
-    if @house.destroy
-      redirect_to houses_path
-    end
+    @house.destroy
+    redirect_to houses_path
+
   end
 
   private
   def user_params
-    params.require(:house).permit(:name)
+    params.require(:house).permit!
   end
 end

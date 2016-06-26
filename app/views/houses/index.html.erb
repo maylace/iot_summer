@@ -1,2 +1,14 @@
-<h1>Houses#index</h1>
-<p>Find me in app/views/houses/index.html.erb</p>
+<%= link_to 'My IoT', controller: 'houses' %>
+<%= link_to 'Add House', new_house_path %>
+<table>
+<% @houses.each do |house| %>
+    <tr>
+      <td><%= house.name %></td>
+      <td><p> <%=link_to("Delete", house_path(house), method: :delete) %> </p></td>
+      <td><%= link_to 'Edit', edit_house_path(house) %></td>
+    </tr>
+
+
+  <% end %>
+</table>
+
