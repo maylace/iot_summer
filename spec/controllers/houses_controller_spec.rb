@@ -35,5 +35,10 @@ RSpec.describe HousesController, type: :controller do
       get :show, id: house
       assigns(:house).should eq(house)
     end
+
+    it 'renders the #show view' do
+      get :show, id: FactoryGirl.create(:house)
+      response.should render_template :show
+    end
   end
 end
