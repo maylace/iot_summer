@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160625113539) do
+ActiveRecord::Schema.define(version: 20160627123832) do
+
+  create_table "devices", force: :cascade do |t|
+    t.string   "name"
+    t.string   "type"
+    t.boolean  "state"
+    t.datetime "time_turned_on"
+    t.datetime "time_last_used"
+    t.integer  "house_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.float    "temperature"
+    t.float    "timer"
+  end
+
+  add_index "devices", ["house_id"], name: "index_devices_on_house_id"
 
   create_table "houses", force: :cascade do |t|
     t.string   "name"
