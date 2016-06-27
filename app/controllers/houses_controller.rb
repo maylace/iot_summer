@@ -5,6 +5,7 @@ class HousesController < ApplicationController
 
   def create
     @house = House.new(user_params)
+    @house.user = curent_user
     @house.save
     redirect_to houses_url
   end
