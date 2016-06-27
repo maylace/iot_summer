@@ -1,4 +1,10 @@
 <p>
   <strong>House Name:</strong>
   <%= @house.name %>
+  <table>
+    <% @house.devices.each do |device| %>
+      <tr> <%= device.name %> </tr>
+      <tr> <%= device.type %> </tr>
+    <% end %>
+</table>
 </p>
