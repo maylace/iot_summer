@@ -66,7 +66,7 @@ describe 'GET #index' do
     end
 
     it 'deletes the device' do
-      expect{
+      expect{it
         delete :destroy, id: @device
       }.to change(Device, :count).by(-1)
     end
