@@ -53,32 +53,41 @@
 
           <div class="container">
           <h1><%= @house.name%></h1>
+           <a href="#">
+          <i class="glyphicon glyphicon-plus-sign"></i>
+        </a>
           <ul>
-
+            <% @house.devices.each do |d| %>
               <div class="panel panel-default" >
+
+
                 <div class="panel-heading">
-                  <h3 class="panel-title">Devices</h3>
+
+                  <h3 class="panel-title"><%=d.name%></h3>
                 </div>
+
                 <div class="panel-body">
 
                   <div class="container"  class="zoom-img">
-                  <div class="row">
-                  <% @house.devices.each do |d| %>
 
-                  <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQwIj48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjcwIiB5PSI3MCIgc3R5bGU9ImZpbGw6I2FhYTtmb250LXdlaWdodDpib2xkO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtZmFtaWx5OkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjE0MHgxNDA8L3RleHQ+PC9zdmc+" alt="..." class="img-rounded">
-                  <% end %>
+                  <div class="row">
+
+
+                  <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQwIj48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjcwIiB5PSI3MCIgc3R5bGU9ImZpbGw6I2FhYTtmb250LXdlaWdodDpib2xkO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtZmFtaWx5OkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjE0MHgxNDA8L3RleHQ+PC9zdmc+" alt="..." class="img-rounded" >
+
                   </div>
               </div>
-
                 </div>
                 <div class="panel-footer">
                   <p>
-
                   </p>
                 </div>
+
             </div>
+             <% end %>
 
           </ul>
+
           </div>
 
         <!-- /#page-content-wrapper -->
