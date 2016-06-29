@@ -1,15 +1,18 @@
 class DevicesController < ApplicationController
+
   def index
     @devices = Device.all
-  e
+  end
+
   def new
     @device = Device.new
   end
 
   def create
     @device = Device.new(user_params)
-    @device.house = @house.id
+
     @device.save
+
     redirect_to houses_path
   end
 
@@ -33,11 +36,11 @@ class DevicesController < ApplicationController
   def destroy
     @device = Device.find(params[:id])
     @device.destroy
-    redirect_to house_path
+    redirect_to houses_path
   end
 
   private
-  def user_params
-    params.require(:device).permit!
-  end
+   def user_params
+      params.require(:device).permit!
+    end
 end
