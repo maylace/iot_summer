@@ -70,3 +70,4 @@ RSpec.describe DevicesController, type: :controller do
   end
 end
 end
+
