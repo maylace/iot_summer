@@ -4,6 +4,7 @@ RSpec.describe DevicesController, type: :controller do
   before(:each) do
     @house = FactoryGirl.create(:house)
     @device = FactoryGirl.create(:device)
+    @log = FactoryGirl.create(:json_log_devices)
   end
 
   describe "POST #create" do
@@ -15,10 +16,16 @@ RSpec.describe DevicesController, type: :controller do
     end
 
     it 'should belong to house' do
-      t = House.reflect_on_association(:devices)
+      t = House.reflect_on_association(:device)
       t.macro.should == :has_many
     end
 
+    it 'should create json_log_device' do
+      expect{
+      post :create, device: FactoryGirl.create(:device),
+        log: FactoryGirl.create(:json_log_devices)
+      }.to change(Json_log_devices, :count).by(1)
+    end
     it 'should redirect to houses page' do
       post :create, house: FactoryGirl.create(:house),
           device: FactoryGirl.attributes_for(:device)

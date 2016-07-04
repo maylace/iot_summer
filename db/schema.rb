@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20160627123832) do
     t.datetime "updated_at",     null: false
     t.float    "temperature"
     t.float    "timer"
+    t.string   "json_log"
   end
 
   add_index "devices", ["house_id"], name: "index_devices_on_house_id"

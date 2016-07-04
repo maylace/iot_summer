@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
   resources :houses
   resources :devices
-
   devise_for :users
 
-  post "/devices/:id/stat" => "devices#user_update"
-
+  put "/devices/:id/stat", to: "devices#user_update"
   # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  # See how all your routes lay out with "ake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

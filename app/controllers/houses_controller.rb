@@ -25,6 +25,7 @@ class HousesController < ApplicationController
 
 def update
     @house = House.find(params[:id])
+    before(:update) { }
     if @house.update(user_params)
       redirect_to houses_path
     end
