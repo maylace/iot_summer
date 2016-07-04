@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :json_log_devices do
+  factory :JsonLogDevice do
     device_id 1
     data_log Array.new
   end

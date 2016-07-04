@@ -11,7 +11,7 @@ class DevicesController < ApplicationController
   def create
     @device = Device.new(user_params)
     @device.save
-    @log = Json_log_devices.new
+    @log = JsonLogDevice.new
     @log.device_id = @device.id
     @log.data_log = Array.new
     @log.save
@@ -43,7 +43,7 @@ class DevicesController < ApplicationController
 
   def user_update
     @device = Device.find(params[:id])
-    @device.update(user_params)
+
   end
 
   private

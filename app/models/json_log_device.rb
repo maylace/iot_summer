@@ -1,4 +1,4 @@
-class Json_log_devices
+class JsonLogDevice
   include Mongoid::Document
   field :device_id, type: Integer
   field :data_log, type: Array
