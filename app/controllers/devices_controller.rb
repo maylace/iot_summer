@@ -11,10 +11,8 @@ class DevicesController < ApplicationController
   def create
     @device = Device.new(user_params)
     @device.save
-    @log = JsonLogDevice.new
-    @log.device_id = @device.id
-    @log.data_log = Array.new
-    @log.save
+
+    @device.save
     redirect_to houses_path
   end
 
@@ -43,6 +41,9 @@ class DevicesController < ApplicationController
 
   def user_update
     @device = Device.find(params[:id])
+    @log = JsonLogDevice.find_by(device_id: @device.id)
+    @device.update(user_params)
+
 
   end
 

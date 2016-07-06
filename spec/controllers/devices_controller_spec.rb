@@ -13,6 +13,7 @@ RSpec.describe DevicesController, type: :controller do
         post :create, house: FactoryGirl.create(:house),
           device: FactoryGirl.attributes_for(:device)
       }.to change(Device, :count).by(1)
+
     end
 
     it 'should belong to house' do
@@ -23,9 +24,10 @@ RSpec.describe DevicesController, type: :controller do
     it 'should create json_log_device' do
       expect{
       post :create, device: FactoryGirl.create(:device),
-        log: FactoryGirl.create(:json_log_devices)
-      }.to change(Json_log_devices, :count).by(1)
+        log: FactoryGirl.create(:JsonLogDevice)
+      }.to change(JsonLogDevice, :count).by(1)
     end
+
     it 'should redirect to houses page' do
       post :create, house: FactoryGirl.create(:house),
           device: FactoryGirl.attributes_for(:device)

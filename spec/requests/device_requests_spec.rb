@@ -1,8 +1,9 @@
-require "rails_helper"
+require 'rails_helper'
 
-RSpec.describe "Request devices", :type => :request do
+RSpec.describe 'Request devices', :type => :request do
   describe 'PUT #user_update' do
     before(:each) { @device = FactoryGirl.create(:device) }
+    before(:each) { @log = FactoryGirl.create(:JsonLogDevice, device_id: @device.id) }
 
     it 'sends request succesfully' do
       put "/devices/#{@device.id}/stat", device: FactoryGirl.attributes_for(:device)
