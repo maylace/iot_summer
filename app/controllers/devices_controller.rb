@@ -1,4 +1,5 @@
 class DevicesController < ApplicationController
+
   def index
     @devices = Device.all
   end
@@ -13,7 +14,12 @@ class DevicesController < ApplicationController
   def create
     @house = House.find(params[:house_id])
     @device = Device.new(user_params)
+<<<<<<< HEAD
     @device.house_id = @house.id
+=======
+    @device.save
+
+>>>>>>> requests
     @device.save
     redirect_to house_path(@house.id)
   end
@@ -38,10 +44,17 @@ class DevicesController < ApplicationController
   def destroy
     @device = Device.find(params[:id])
     @device.destroy
-    redirect_to house_path
+    redirect_to houses_path
+  end
+
+  def user_update
+    @device = Device.find(params[:id])
+    @log = JsonLogDevice.find_by(device_id: @device.id)
+    @device.update(user_params)
   end
 
   private
+
   def user_params
     params.require(:device).permit!
   end

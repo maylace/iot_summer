@@ -24,9 +24,17 @@ class HousesController < ApplicationController
   end
 
 def update
+<<<<<<< HEAD
   @house = House.find(params[:id])
   if @house.update(user_params)
     redirect_to houses_path
+=======
+    @house = House.find(params[:id])
+    before(:update) { }
+    if @house.update(user_params)
+      redirect_to houses_path
+    end
+>>>>>>> requests
   end
 end
 
@@ -44,6 +52,7 @@ end
   end
 
   private
+
   def user_params
     params.require(:house).permit!
     params.require(:device).permit!
