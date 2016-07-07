@@ -43,12 +43,11 @@ class DevicesController < ApplicationController
     @device = Device.find(params[:id])
     @log = JsonLogDevice.find_by(device_id: @device.id)
     @device.update(user_params)
-
-
   end
 
   private
-   def user_params
-      params.require(:device).permit!
-    end
+
+  def user_params
+    params.require(:device).permit!
+  end
 end

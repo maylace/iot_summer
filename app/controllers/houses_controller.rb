@@ -39,6 +39,7 @@ def update
   end
 
   private
+
   def user_params
     params.require(:house).permit!
   end
