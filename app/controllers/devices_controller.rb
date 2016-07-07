@@ -40,7 +40,8 @@ class DevicesController < ApplicationController
   end
 
   private
-   def user_params
+
+    def user_params
       params.require(:device).permit!
     end
 end

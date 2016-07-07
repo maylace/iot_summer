@@ -3,9 +3,8 @@ class HousesController < ApplicationController
     @houses = House.all
   end
 
-   def new
+  def new
     @house = House.new
-
   end
 
   def edit
@@ -19,11 +18,11 @@ class HousesController < ApplicationController
     redirect_to houses_path
   end
 
- def show
+  def show
     @house = House.find(params[:id])
   end
 
-def update
+  def update
     @house = House.find(params[:id])
     if @house.update(user_params)
       redirect_to houses_path
@@ -34,10 +33,10 @@ def update
     @house = House.find(params[:id])
     @house.destroy
     redirect_to houses_path
-
   end
 
   private
+
   def user_params
     params.require(:house).permit!
   end

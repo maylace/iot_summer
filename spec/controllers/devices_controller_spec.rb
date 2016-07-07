@@ -1,12 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe DevicesController, type: :controller do
+
   before(:each) do
     @house = FactoryGirl.create(:house)
     @device = FactoryGirl.create(:device)
   end
 
-  describe "POST #create" do
+  describe 'POST #create' do
     it 'creates new devices' do
       expect{
         post :create, house: FactoryGirl.create(:house),
@@ -25,9 +26,9 @@ RSpec.describe DevicesController, type: :controller do
       response.should redirect_to houses_path
     end
   end
-  describe "GET #show" do
+
+  describe 'GET #show' do
     it 'assigns the requested device' do
-      house = FactoryGirl.create(:house)
       device = FactoryGirl.create(:device)
       get :show, id: device
       assigns(:device).should eql(device)
@@ -37,7 +38,7 @@ RSpec.describe DevicesController, type: :controller do
       get :show, id: FactoryGirl.create(:device)
       response.should render_template :show
     end
-
+  end
 
   describe 'PUT #update' do
     before(:each) do
@@ -46,7 +47,8 @@ RSpec.describe DevicesController, type: :controller do
 
     it 'changes @device attributes' do
       put :update, id: @device,
-        device: FactoryGirl.attributes_for(:device,name: "name", temperature: 1.15)
+        device: FactoryGirl.attributes_for(:device, name: 'name',
+                                            temperature: 1.15)
       @device.reload
       @device.name.should eql("name")
     end
@@ -68,5 +70,4 @@ RSpec.describe DevicesController, type: :controller do
       response.should redirect_to houses_path
     end
   end
-end
 end
