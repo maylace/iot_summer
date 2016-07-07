@@ -52,9 +52,11 @@
         <!-- Page Content -->
 
           <div class="container">
+          <div class="page-header", style:p adding-bottom: 100px>
           <h1><%= @house.name%></h1>
-           <a href="#">
-          <i class="glyphicon glyphicon-plus-sign"></i>
+          </div>
+           <a href= "devices/new">
+          <%= link_to image_tag "/assets/1467816116_More.png", "#{@house.id}/devices/new%"%>
         </a>
           <ul>
             <% @house.devices.each do |d| %>

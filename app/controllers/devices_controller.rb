@@ -1,16 +1,21 @@
 class DevicesController < ApplicationController
   def index
     @devices = Device.all
-  e
+  end
+
   def new
     @device = Device.new
+    @house = House.find(params[:house_id])
+
+
   end
 
   def create
+    @house = House.find(params[:house_id])
     @device = Device.new(user_params)
-    @device.house = @house.id
+    @device.house_id = @house.id
     @device.save
-    redirect_to houses_path
+    redirect_to house_path(@house.id)
   end
 
   def show
