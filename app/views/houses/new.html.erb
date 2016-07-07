@@ -53,28 +53,29 @@
 
           <div class="container">
 
-          <div class="page-header", style:p adding-bottom: 100px>
-            <h1>New House</h1>
-          </div>
-
-            <%= form_for @house do |f| %>
-          <p>
-            <%= f.label :name %><br>
-            <%= f.text_field :name %>
-          </p>
-
-          <p>
-            <%= f.submit %>
-          </p>
-          <% end %>
-
-                <div class="panel-footer">
-                  <p>
-                  </p>
-                </div>
-
+            <div class="page-header", style:p adding-bottom: 100px>
+              <h1>New House</h1>
             </div>
+
+              <%= form_for @house do |f| %>
+              <p>
+                <%= f.label :name %><br>
+                <%= f.text_field :name %>
+              </p>
+
+              <p>
+                <%= f.submit %>
+              </p>
+
+              <% end %>
+
+            <div class="panel-footer">
+              <p>
+              </p>
+            </div>
+
           </div>
+        </div>
 
         <!-- /#page-content-wrapper -->
 

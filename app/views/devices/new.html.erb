@@ -52,36 +52,36 @@
         <!-- Page Content -->
 
           <div class="container">
-          <div class="page-header", style:p adding-bottom: 100px>
-          <h1>New Device</h1>
-          </div>
-           <%= form_for [@house, @device] do |f| %>
-              <p>
-                <%= f.label :name %><br>
-                <%= f.text_field :name %><br>
-                <%= f.label :temperature %><br>
-                <%= f.number_field :temperature %><br>
-                <%= f.label :type %><br>
-                <%= f.text_field :type %><br>
-              </p>
-
-              <p>
-                <%= f.submit %>
-              </p>
-              <% end %>
-
-
-                <div class="panel-footer">
-                  <p>
-                  </p>
-                </div>
-
+            <div class="page-header", style:p adding-bottom: 100px>
+            <h1>New Device</h1>
             </div>
+             <%= form_for [@house, @device] do |f| %>
+                <p>
+                  <%= f.label :name %><br>
+                  <%= f.text_field :name %><br>
+                  <%= f.label :temperature %><br>
+                  <%= f.number_field :temperature %><br>
+                  <%= f.label :type %><br>
+                  <%= f.text_field :type %><br>
+                </p>
+
+                <p>
+                  <%= f.submit %>
+                </p>
+                <% end %>
+
+
+            <div class="panel-footer">
+              <p>
+              </p>
+            </div>
+
           </div>
+        </div>
 
         <!-- /#page-content-wrapper -->
 
-    </div>
+      </div>
     <!-- /#wrapper -->
 
     <!-- jQuery -->
