@@ -3,7 +3,6 @@ development:
   clients:
     # Defines the default client. (required)
     default:
-
       # Defines the name of the default database that Mongoid can connect to.
       # (required).
       database: iot_center_development

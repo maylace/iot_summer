@@ -12,7 +12,6 @@ class HousesController < ApplicationController
   end
 
   def create
-
     @house = House.new(user_params)
     @house.user = current_user
     @house.save
@@ -39,7 +38,7 @@ end
 
   def create_device
     @house = House.find_by(user_params)
-    @device = Device.new(user_params)
+    @device = Device.new(device_params)
     @device.house_id = @house.id
     @device.save
   end
@@ -48,6 +47,8 @@ end
 
   def user_params
     params.require(:house).permit!
+  end
+  def device_params
     params.require(:device).permit!
   end
 end

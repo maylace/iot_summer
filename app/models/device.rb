@@ -3,7 +3,11 @@ class Device < ActiveRecord::Base
   after_save :write_log
 
   def write_log
-    @log = JsonLogDevice.find_by(device_id: id) || JsonLogDevice.new(device_id: id)
+    if JsonLogDevice.where(device_id: id).exists?
+      @log = JsonLogDevice.find_by(device_id: id)
+    else
+      @log = JsonLogDevice.new(device_id: id)
+    end
     @log.data_log.push([time_turned_on, temperature])
     @log.save
   end

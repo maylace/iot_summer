@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   put "/devices/:id/stat", to: "devices#user_update"
   get 'users/new'
   authenticated :user do
-    root to: "houses#show", as: :authenticated_root
+    root to: "houses#index", as: :authenticated_root
   end
 end
   # The priority is based upon order of creation: first created -> highest priority.

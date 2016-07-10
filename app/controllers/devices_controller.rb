@@ -16,6 +16,7 @@ class DevicesController < ApplicationController
     @device = Device.new(user_params)
     @device.house_id = @house.id
     @device.save
+    redirect_to houses_path
   end
 
   def show
