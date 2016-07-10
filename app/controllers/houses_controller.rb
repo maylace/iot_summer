@@ -23,19 +23,12 @@ class HousesController < ApplicationController
     @house = House.find(params[:id])
   end
 
-def update
-<<<<<<< HEAD
-  @house = House.find(params[:id])
-  if @house.update(user_params)
-    redirect_to houses_path
-=======
+  def update
     @house = House.find(params[:id])
     before(:update) { }
     if @house.update(user_params)
       redirect_to houses_path
     end
->>>>>>> requests
-  end
 end
 
   def destroy

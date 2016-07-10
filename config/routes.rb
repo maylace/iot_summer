@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
   resources :houses do
     resources :devices
   end
@@ -8,15 +7,15 @@ Rails.application.routes.draw do
 
   # The priority i based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-=======
-  resources :houses
-  resources :devices
-  devise_for :users
 
   put "/devices/:id/stat", to: "devices#user_update"
+  get 'users/new'
+  authenticated :user do
+    root to: "houses#show", as: :authenticated_root
+  end
+end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "ake routes".
->>>>>>> requests
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
@@ -69,4 +68,3 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end

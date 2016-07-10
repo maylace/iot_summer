@@ -14,14 +14,8 @@ class DevicesController < ApplicationController
   def create
     @house = House.find(params[:house_id])
     @device = Device.new(user_params)
-<<<<<<< HEAD
     @device.house_id = @house.id
-=======
     @device.save
-
->>>>>>> requests
-    @device.save
-    redirect_to house_path(@house.id)
   end
 
   def show
@@ -54,8 +48,7 @@ class DevicesController < ApplicationController
   end
 
   private
-
-  def user_params
-    params.require(:device).permit!
-  end
+    def user_params
+      params.require(:device).permit!
+    end
 end

@@ -75,6 +75,5 @@ RSpec.describe HousesController, type: :controller do
       delete :destroy, id: @house
       response.should redirect_to houses_path
     end
-
   end
 end

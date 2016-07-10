@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe DevicesController, type: :controller do
 <<<<<<< HEAD
+<<<<<<< HEAD
 describe 'GET #index' do
     it 'returns http success' do
       get :index
@@ -36,13 +37,16 @@ describe 'GET #index' do
       get :show, id: device
       assigns(:device).should eq(device)
 =======
+=======
+
+>>>>>>> devices_backend
   before(:each) do
     @house = FactoryGirl.create(:house)
     @device = FactoryGirl.create(:device)
     @log = FactoryGirl.create(:json_log_devices)
   end
 
-  describe "POST #create" do
+  describe 'POST #create' do
     it 'creates new devices' do
       expect{
         post :create, house: FactoryGirl.create(:house),
@@ -69,9 +73,9 @@ describe 'GET #index' do
       response.should redirect_to houses_path
     end
   end
-  describe "GET #show" do
+
+  describe 'GET #show' do
     it 'assigns the requested device' do
-      house = FactoryGirl.create(:house)
       device = FactoryGirl.create(:device)
       get :show, id: device
       assigns(:device).should eql(device)
@@ -82,6 +86,7 @@ describe 'GET #index' do
       get :show, id: FactoryGirl.create(:device)
       response.should render_template :show
     end
+<<<<<<< HEAD
 <<<<<<< HEAD
   end
 
@@ -102,6 +107,9 @@ describe 'GET #index' do
       @device.name.should eq('Device')
 =======
 
+=======
+  end
+>>>>>>> devices_backend
 
   describe 'PUT #update' do
     before(:each) do
@@ -110,7 +118,8 @@ describe 'GET #index' do
 
     it 'changes @device attributes' do
       put :update, id: @device,
-        device: FactoryGirl.attributes_for(:device,name: "name", temperature: 1.15)
+        device: FactoryGirl.attributes_for(:device, name: 'name',
+                                            temperature: 1.15)
       @device.reload
       @device.name.should eql("name")
 >>>>>>> requests
@@ -150,6 +159,9 @@ describe 'GET #index' do
     end
   end
 end
+<<<<<<< HEAD
 >>>>>>> requests
 end
 
+=======
+>>>>>>> devices_backend
