@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
   get 'users/new'
-
+   mount Attachinary::Engine => '/attachinary'
   devise_for :users
-  resources :users, :only => [:create]
+
+  resources :houses
+
+  authenticated :user do
+    root to: "houses#show", as: :authenticated_root
+  end
+end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
