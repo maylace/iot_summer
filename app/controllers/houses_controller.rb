@@ -1,6 +1,6 @@
 class HousesController < ApplicationController
   def index
-    @houses = House.all
+    @houses = current_user.houses
   end
 
   def new
@@ -26,7 +26,6 @@ class HousesController < ApplicationController
     @house = House.find(params[:id])
     before(:update) { }
     if @house.update(user_params)
-      redirect_to houses_path
     end
 end
 
@@ -51,4 +50,6 @@ end
   def device_params
     params.require(:device).permit!
   end
+
+
 end

@@ -1,58 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Simple Sidebar - Start Bootstrap Template</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/simple-sidebar.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
-
-<body>
-
-    <div id="wrapper">
-
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">
-                      <%= link_to("IoT Home", houses_path) %>
-                    </a>
-                </li>
-                <li class = "firstbutton">
-                    <%= link_to("Sing Up", new_user_registration_path) %>
-                </li>
-                <li>
-                    <%= link_to("New House", new_house_path) %>
-                </li>
-
-            </ul>
-        </div>
-        <!-- /#sidebar-wrapper -->
-
+<%= render :partial => :house, :collection => House.all, :as => :c %>
+ <div id="wrapper">
         <!-- Page Content -->
 
           <div class="container">
-          <div class="page-header", style:p adding-bottom: 100px>
+          <div class="page-header", style: padding-bottom: 100px>
           <h1><%= @house.name%></h1>
           </div>
 
@@ -81,7 +34,7 @@
                 </div>
                 <div class="panel-footer">
                   <p>
-                  </p>
+                    </p>
                 </div>
 
             </div>
@@ -94,22 +47,5 @@
         <!-- /#page-content-wrapper -->
 
     </div>
-    <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Menu Toggle Script -->
-    <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
-
 </body>
-
 </html>
