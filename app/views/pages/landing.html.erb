@@ -17,6 +17,7 @@
 
     <!-- Custom CSS -->
     <link href="css/landing-page.css" rel="stylesheet">
+    <link href="css/stylesheet.css" rel="stylesheet"
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -72,9 +73,13 @@
                         <h3>To Your IoT Home</h3>
                         <hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">
+                         <% if current_user.present? %>
+                            <%= render :partial => "house_signed_in" %>
+                         <% else %>
                             <li>
-                                <a href="users/sign_in" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Sign-in</span></a>
+                                <a href="users/sign_in" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Sign-in</span></a>
                             </li>
+                         <%end%>
                             <li>
                                 <a href="users/sign_up" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Sign-up</span></a>
                             </li>
