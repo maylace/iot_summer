@@ -7,8 +7,7 @@ class DevicesController < ApplicationController
   def new
     @device = Device.new
     @house = House.find(params[:house_id])
-
-
+    types = ["Fridge", "Oven", "Microwave", "Lamp", "Thermostat"]
   end
 
   def create
@@ -16,7 +15,7 @@ class DevicesController < ApplicationController
     @device = Device.new(user_params)
     @device.house_id = @house.id
     @device.save
-    redirect_to houses_path
+    redirect_to house_path(@house.id)
   end
 
   def show

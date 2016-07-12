@@ -62,7 +62,14 @@
                   <%= f.label :temperature %><br>
                   <%= f.number_field :temperature %><br>
                   <%= f.label :type %><br>
-                  <%= f.text_field :type %><br>
+                  <select id="device_category_type" name="device[type]">
+                    <option value="Fridge">Fridge</option>
+                    <option value="Oven">Oven</option>
+                    <option value="Microwave">Microwave</option>
+                    <option value="Lamp">Lamp</option>
+                    <option value="Thermosat">Thermostat</option>
+                </select>
+
                 </p>
 
                 <p>
