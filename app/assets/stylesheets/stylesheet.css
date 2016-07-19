@@ -39,15 +39,15 @@
     margin-bottom:0;
     border:0;
   }
-  .sidebar-nav .navbar ul {
+  .sidebar-nav .navbar  {
     float: none;
     display: block;
   }
-  .sidebar-nav .navbar li {
+  .sidebar-nav .navbar  {
     float: none;
     display: block;
   }
-  .sidebar-nav .navbar li a {
+  .sidebar-nav .navbar  {
     padding-top: 12px;
     padding-bottom: 12px;
   }
@@ -154,4 +154,15 @@
   height: 60px;
 }
 
+.plus_button_house{
+  float: right;
+  padding-right: 60px;
+  padding-bottom:30px;
+  height: 60px;
+}
 
+.data{
+  position: fixed;
+  padding-left: 180px;
+  padding-top: 20px;
+}

@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20160627123832) do
   create_table "devices", force: :cascade do |t|
     t.string   "name"
     t.string   "type"
-    t.boolean  "state"
+    t.boolean  "state", default: true
     t.datetime "time_turned_on"
     t.datetime "time_last_used"
     t.integer  "house_id"
