@@ -1,0 +1,16 @@
+<%= form_for @device do |f| %>
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %><br>
+    <%= f.label :temperature %><br>
+    <%= f.number_field :temperature %><br>
+    <%= f.label :type %><br>
+    <%= f.text_field :type %><br>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+

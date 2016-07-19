@@ -1,6 +1,24 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
+  resources :houses do
+    resources :devices
+  end
+  get "landing" => "pages#landing"
+
+  devise_for :users
+  root to: "pages#landing"
+
+  # The priority i based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+
+  put "/devices/:id/stat", to: "devices#user_update"
+  get 'users/new'
+  authenticated :user do
+    root to: "houses#index", as: :authenticated_root
+  end
+end
+
+  # The priority is based upon order of creation: first created -> highest priority.
+  # See how all your routes lay out with "ake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
@@ -53,4 +71,3 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end

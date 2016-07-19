@@ -28,13 +28,22 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Unicorn as the app server
 # gem 'unicorn'
+  gem 'bootstrap-sass', '~> 3.2.0'
+  gem 'autoprefixer-rails'
 
   gem 'factory_girl_rails'
   gem 'rubocop'
-  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'devise'
+  gem 'ffaker'
+  gem 'shoulda'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+gem 'mongoid', '~> 5.0.0.beta', github: 'mongoid/mongoid'
+gem 'bson_ext'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
